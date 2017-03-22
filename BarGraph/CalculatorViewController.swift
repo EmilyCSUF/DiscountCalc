@@ -33,6 +33,8 @@ class CalculatorViewController: UIViewController {
         let originalp: Double = price + price * tax * 0.01;
         OriginalPrice.text = "Original Price: $\(originalp)"
         
+        // first discount with discount %
+        // second discount with other discount %
         let firstdiscount: Double = price * discountp * 0.01
         let seconddiscount: Double = price * otherdiscount * 0.01
         let discountprice: Double = originalp - firstdiscount - seconddiscount - dollaroff
