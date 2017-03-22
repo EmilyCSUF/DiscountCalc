@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3C1A698B1E6E5DA600B40920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A698A1E6E5DA600B40920 /* AppDelegate.swift */; };
-		3C1A698D1E6E5DA600B40920 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A698C1E6E5DA600B40920 /* ViewController.swift */; };
+		3C1A698D1E6E5DA600B40920 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A698C1E6E5DA600B40920 /* CalculatorViewController.swift */; };
 		3C1A69901E6E5DA600B40920 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C1A698E1E6E5DA600B40920 /* Main.storyboard */; };
 		3C1A69921E6E5DA600B40920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C1A69911E6E5DA600B40920 /* Assets.xcassets */; };
 		3C1A69951E6E5DA600B40920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C1A69931E6E5DA600B40920 /* LaunchScreen.storyboard */; };
 		3C1A69A01E6E5DA600B40920 /* BarGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A699F1E6E5DA600B40920 /* BarGraphTests.swift */; };
+		3C1A69AB1E6E61C700B40920 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1A69AA1E6E61C700B40920 /* GraphView.swift */; };
+		3CCE574E1E6E6F4B00480177 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCE574D1E6E6F4B00480177 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,7 @@
 /* Begin PBXFileReference section */
 		3C1A69871E6E5DA600B40920 /* BarGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1A698A1E6E5DA600B40920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C1A698C1E6E5DA600B40920 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C1A698C1E6E5DA600B40920 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		3C1A698F1E6E5DA600B40920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C1A69911E6E5DA600B40920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C1A69941E6E5DA600B40920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		3C1A699B1E6E5DA600B40920 /* BarGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1A699F1E6E5DA600B40920 /* BarGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphTests.swift; sourceTree = "<group>"; };
 		3C1A69A11E6E5DA600B40920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C1A69AA1E6E61C700B40920 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		3CCE574D1E6E6F4B00480177 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				3C1A698A1E6E5DA600B40920 /* AppDelegate.swift */,
-				3C1A698C1E6E5DA600B40920 /* ViewController.swift */,
 				3C1A698E1E6E5DA600B40920 /* Main.storyboard */,
 				3C1A69911E6E5DA600B40920 /* Assets.xcassets */,
 				3C1A69931E6E5DA600B40920 /* LaunchScreen.storyboard */,
 				3C1A69961E6E5DA600B40920 /* Info.plist */,
+				3C1A69AA1E6E61C700B40920 /* GraphView.swift */,
+				3C1A698C1E6E5DA600B40920 /* CalculatorViewController.swift */,
+				3CCE574D1E6E6F4B00480177 /* ResultsViewController.swift */,
 			);
 			path = BarGraph;
 			sourceTree = "<group>";
@@ -199,8 +205,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1A698D1E6E5DA600B40920 /* ViewController.swift in Sources */,
+				3C1A698D1E6E5DA600B40920 /* CalculatorViewController.swift in Sources */,
 				3C1A698B1E6E5DA600B40920 /* AppDelegate.swift in Sources */,
+				3C1A69AB1E6E61C700B40920 /* GraphView.swift in Sources */,
+				3CCE574E1E6E6F4B00480177 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +414,7 @@
 				3C1A69A61E6E5DA600B40920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C1A69A71E6E5DA600B40920 /* Build configuration list for PBXNativeTarget "BarGraphTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +423,7 @@
 				3C1A69A91E6E5DA600B40920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
