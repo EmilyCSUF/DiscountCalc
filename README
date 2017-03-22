@@ -1,0 +1,5 @@
+Emily Lin
+
+This program will accept the initial price, dollars off the initial price, two discount percents as well as tax It will use these variables to calculate the original price of the product including tax as well as the discount price after factoring the dollars off, and the two discount percents.
+
+Then the user can swipe to see a graphical view of the amount saved, versus the original price and amount they paid.
