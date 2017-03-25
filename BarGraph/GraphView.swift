@@ -21,41 +21,62 @@ extension CGContext {
         setFillColor(red: redColor, green: greenColor, blue: blueColor, alpha: 1.0)
     }
 }
-class GraphView: UIView { //can change depending on if it creates default functions or not
+class GraphView: UIView {
+    
     //let CalcData: DiscountCalc = DiscountCalc.shared
+    
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        //need to unwrap optional value
+        // Drawing code
+        //CG prefix is like OPENGLprefix stuff
         let context:CGContext = UIGraphicsGetCurrentContext()!
-        
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
+        let leftGuide:CGFloat = 0
+        let rightGuide:CGFloat = screenWidth - leftGuide
+        let topGuide:CGFloat = 62
+        let bottomGuide:CGFloat = screenHeight - topGuide
+        let HalfGuide:CGFloat = screenWidth / 2
         
-        //to create a border
-        let leftGuide:CGFloat = 16.0
-        //let rightGuide:CGFloat = screenWidth - 16.0
-        let topGuide:CGFloat = 72.0
-        //let botGuide:CGFloat = screenHeight - 16.0
+        //imports data into local variables for easier access
+        let original = Data.shared.originalPrice
+        let discount = Data.shared.discountPrice
+        var saved = original - discount
         
-        //Draw rectangle
-        //define a color, grab context and specify color then coordinates
-        //alpha is whether the color will be transparent or solid
-        //context.setFillColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        context.setFillColor(0xFFFFFF)
-        context.fill(CGRect(x:leftGuide, y:topGuide, width:screenWidth - 32.0, height:screenHeight - 96.0))
-        //coordinates are not via pixels, it is by points; will not scale
-        //origin is at top left
+        //draw rect total
+        context.setFillColor(0xFE6F5E)
+        context.fill(CGRect(x:leftGuide,y:topGuide,width: HalfGuide ,height:screenHeight))
         
-        //Draw Text
-        let myText = "CyanBox"
-        let subText = "Baby blue..."
+        //draw the rectangle for how much you saved
+        context.setFillColor(0xFEF65B)
+        let savedHeight = screenHeight * CGFloat(saved / original)
+        context.fill(CGRect(x: screenWidth , y: topGuide , width: HalfGuide - rightGuide , height:savedHeight))
         
-        //Text Attributes
-        let textAttributes = [NSFontAttributeName: UIFont(name: "Helvetica Bold", size: 16.0)!, NSForegroundColorAttributeName: UIColor(red:1.0, green: 1.0, blue: 1.0,alpha:1.0)] //unwrap incase font name does not exist
+        //draw the rectangle for how much you need to pay
+        context.setFillColor(0x0F19CBB)
+        context.fill(CGRect(x: screenWidth , y:topGuide + savedHeight , width: HalfGuide - rightGuide , height: screenHeight - savedHeight))
         
-        myText.draw(at: CGPoint(x: leftGuide + 16.0, y: topGuide + 16.0), withAttributes: textAttributes)
-        subText.draw(at: CGPoint(x:leftGuide + 16.0, y: topGuide + 16.0), withAttributes: textAttributes)
         
-        // Drawing code
-    }
+        /*
+         height = 726
+         width = 414
+         */
+        
+        
+        //creating string to overlay percentages
+        let textoriginal = "Original:" + String(format: "%.2f", original)
+        let textsaved = "You Saved\n" + String(format: "%.2f", saved) + "\n" + String(format: "%.2f", saved/original) + "%"
+        let textdiscount = "Pay:" + String(format: "%.2f", discount) + "\n" + String(format: "%.2f", 100-saved/original) + "%"
+        
 
+        let textAttributes = [
+            NSFontAttributeName: UIFont(name:"Helvetica Bold", size: 16.0)!,
+            NSForegroundColorAttributeName: UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        ]
+        
+        textoriginal.draw(at: CGPoint(x: 0,y:topGuide),withAttributes: textAttributes)
+        textsaved.draw(at: CGPoint(x: HalfGuide,y:topGuide),withAttributes: textAttributes)
+        textdiscount.draw(at: CGPoint(x: HalfGuide,y: (topGuide+savedHeight)),withAttributes: textAttributes)
+    }
 }

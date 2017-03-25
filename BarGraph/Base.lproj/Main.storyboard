@@ -159,7 +159,7 @@
                         <viewControllerLayoutGuide type="top" id="CY9-8f-Ic4"/>
                         <viewControllerLayoutGuide type="bottom" id="4uc-x8-f0Q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BHw-S9-YFe">
+                    <view key="view" contentMode="scaleToFill" id="BHw-S9-YFe" customClass="GraphView" customModule="BarGraph" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,7 +172,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8U-He-ffs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="36Z-RY-bAJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="857" y="137"/>
+            <point key="canvasLocation" x="932" y="138"/>
         </scene>
     </scenes>
 </document>

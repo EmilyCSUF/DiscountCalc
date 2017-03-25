@@ -41,6 +41,9 @@ class CalculatorViewController: UIViewController {
         
         DiscountPrice.text = "Discount Price: $\(discountprice)"
         
+        //shares data to model
+        Data.shared.originalPrice = Float(originalp)
+        Data.shared.discountPrice = Float(discountprice)
     
         
     }
